@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block main %}
+<!-- Displays the products per category -->
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="../static/css/styles.css"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<section>
+  <div class="text-dark text-center">
+    <div>
+      <hr />
+      <p class="h3 text-info mb-4">Select a product from the following:</p>
+    </div>
+  </div>
+
+  <div class="card-columns">
+    <!-- each item is a bootstrap card -->
+    {% for item in items%}
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="{{url_for('static', filename='img/'+item.image)}}"
+        alt="Product Image"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{item.name}}</h4>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+      <div class="card-footer">
+        <form action="{{ url_for('main.order') }}">
+          <input
+            type="hidden"
+            id="item_id"
+            name="item_id"
+            value="{{ item.id }}"
+          />
+          <p style="color: green;">
+            Price: {{ "$%.2f"|format(item.price) }}
+          </p>
+          <input class="btn btn-primary" type="submit" value="Add to Cart" />
+        </form>
+      </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

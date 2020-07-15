@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% import "bootstrap/wtf.html" as wtf %} {% block
+main%}
+
+<hr />
+<section class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="bg-light text-info">Checkout Page</h1>
+        <p>
+          <b
+            >Please fill out the following details so this gear can be on its
+            way to you!</b
+          >
+        </p>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        {{wtf.quick_form(form)}}
+        <hr />
+        <div class="text-center">Thank you for shopping with us today!</div>
+        <hr />
+      </div>
+      <div class="col-6">
+        <p class="text-center"><b>Enjoy your products!</b></p>
+        <img
+          src="{{url_for('static', filename='img/shoes.jpg')}}"
+          height="300px"
+          width="100%"
+          class="responsive"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
