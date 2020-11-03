@@ -12,7 +12,9 @@ clicking checkout on the order page. If the user wants to delete an item, they m
 The user also has the ability to search via text in the upper right hand side of the page
 in order to look for specific items if they would like.
 
+To start from terminal, run script "python3 run.py" in Project directory
 
 VIDEO
 ~~~~~~
 https://youtu.be/LfMeDzJ_rX4
+
